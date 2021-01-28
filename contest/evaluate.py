@@ -74,7 +74,7 @@ def run_evaluation(output_paths, annotation_paths, max_index=None):
 
   Returns:
     evaluation: list[wandb.Image, wandb.Image, float]
-      The first Image is the model output, the second is the ground truth"
+      The first Image is the model output, the second is the ground truth
     metrics: dict[string: numeric or wandb.Media]
       Metrics from evaluation to log to Weights & Biases
   """
