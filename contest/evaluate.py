@@ -2,8 +2,6 @@ import numpy as np
 import PIL
 import wandb
 
-from . import utils
-
 
 def iou_from_output(prediction, annotate):
   """Calculates the intersection over union (IoU) metric
