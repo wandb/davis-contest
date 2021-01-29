@@ -6,7 +6,7 @@ import PIL
 
 def save_from_array(arr, folder, index):
   im = PIL.Image.fromarray(arr)
-  path = folder / (str(index).zfill(5) + ".png")
+  path = Path(folder) / (str(index).zfill(5) + ".png")
   im.save(path)
   return str(path)
 
