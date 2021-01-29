@@ -5,7 +5,7 @@ import torch
 
 
 def count_params(model):
-  return sum(p.numel() for p in model.parameters)
+  return sum(p.numel() for p in model.parameters())
   
 
 def count_flops(model, device):
