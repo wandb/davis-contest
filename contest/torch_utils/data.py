@@ -1,7 +1,7 @@
 """Tools for working with data for the DAVIS contest
 using the PyTorch and PyTorch Lightning libraries.
 """
-import pytorch_lightning
+import pytorch_lightning as pl
 import skimage.io
 import torch
 from torchvision import transforms
