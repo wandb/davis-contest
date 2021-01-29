@@ -1,3 +1,5 @@
+import os
+
 import numpy as np
 import pandas as pd
 import wandb
@@ -125,3 +127,26 @@ def build_table(evaluation):
   for row in evaluation:
     evaluation_table.add_data(*row)
   return evaluation_table
+
+
+def make_result_artifact(output_paths, name, output_dir="outputs", output_paths_path=None, metadata=None):
+  """Given the pd.DataFrame output_paths, generated a wandb.Artifact with name name
+  and adds the contents of the output_dir to that Artifact.
+  The output_paths pd.DataFrame is saved to the Artifact with relative path "paths.json".
+  
+  Metadata should include computational complexity information (e.g. FLOPs, parameter count).
+  """
+  if metadata is None:
+    metadata = {}
+    
+  if output_paths_path is None:
+    output_paths_path = os.path.join("wandb", "paths.json")
+    
+  output_paths.to_json(output_paths_path)
+  
+  result_artifact = wandb.Artifact(name=name, type="result",
+                                   metadata=metadata)
+  result_artifact.add_dir(output_dir, "outputs")
+  result_artifact.add_file(output_paths_path, "paths.json")
+  
+  return result_artifact
