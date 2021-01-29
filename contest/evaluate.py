@@ -5,14 +5,14 @@ import wandb
 from .utils import image
 
 
-def iou_from_output(prediction, annotate):
+def iou_from_output(prediction, annotation):
   """Calculates the intersection over union (IoU) metric
   for two mask arrays with entries in 0-255.
   
   Parameters:
     prediction: np.uint8 array
       Predicted mask for image as integer array, values from 0 to 255
-    annotate: np.uint8 array
+    annotation: np.uint8 array
       Ground truth mask as integer array, values 0 and 255.
     
   Returns:
@@ -21,7 +21,7 @@ def iou_from_output(prediction, annotate):
       to the union of the provided masks,
       unless both are empty, in which case -1.0.
   """
-  pred_binary, annotate_binary = to_binary(prediction), to_binary(annotate)
+  pred_binary, annotate_binary = to_binary(prediction), to_binary(annotation)
   iou_score = binary_iou(pred_binary, annotate_binary)
   return iou_score
 
@@ -90,9 +90,9 @@ def run_evaluation(output_paths, annotation_paths, max_index=None):
       continue
 
     model_outputs = image.load_to_array(output_path)
-    target = image.load_to_array(target_path)
+    annotation = image.load_to_array(annotation_path)
   
-    iou_score = iou_from_output(model_outputs, target)
+    iou_score = iou_from_output(model_outputs, annotation)
   
     model_outputs_im = wandb.Image(model_outputs, "model output")
     target_im = wandb.Image(target, "target")
