@@ -14,4 +14,4 @@ def count_flops(model, device):
       macs, _ = ptflops.get_model_complexity_info(model, (3, 853, 480), as_strings=False)
     except ZeroDivisionError:
       raise ValueError("failed to count model FLOPs")
-    return macs // 2
+    return int(macs / 2)
