@@ -18,7 +18,7 @@ def run(model, dataloader, num_images, output_dir):
   
   with torch.no_grad():
     ii = 0
-    for eval_batch in iter(evaluation_dataloader):
+    for eval_batch in iter(dataloader):
     
       outputs = model.forward(eval_batch)
       outputs = utils.to_numpy_int_arrays(outputs)
