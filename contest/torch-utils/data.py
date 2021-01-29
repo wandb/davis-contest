@@ -1,12 +1,23 @@
 """Tools for working with data for the DAVIS contest
 using the PyTorch and PyTorch Lightning libraries.
 """
-
 import pytorch_lightning
 import skimage.io
 import torch
+from torchvision import transforms
 
 from ..utils import clips
+
+
+default_image_transform = transforms.Compose([
+      transforms.ToTensor(),
+      transforms.Normalize(mean=[0.485, 0.456, 0.406],
+                           std=[0.229, 0.224, 0.225])
+    ])
+default_mask_transform = transforms.Compose([
+      transforms.ToTensor(),
+    ])
+
 
 class VidSegDataset(torch.utils.data.Dataset):
   """From a pd.DataFrame of paths to image files and (optionally)
