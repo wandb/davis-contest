@@ -95,9 +95,9 @@ def run_evaluation(output_paths, annotation_paths, max_index=None):
     iou_score = iou_from_output(model_outputs, annotation)
   
     model_outputs_im = wandb.Image(model_outputs, mode="L", caption="model output")
-    target_im = wandb.Image(target, mode="L", caption="target")
+    annotation_im = wandb.Image(annotation, mode="L", caption="target")
   
-    evaluation.append([model_outputs, target, float(iou_score)])
+    evaluation.append([model_outputs_im, annotation_im, float(iou_score)])
 
   metrics = extract_metrics(evaluation)
 
