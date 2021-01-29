@@ -39,22 +39,22 @@ def split_on_clips(paths_df, columns=None, split=0.8):
   train_mask = clip_ids.apply(lambda id: str(id) in train_clip_names.unique())
   holdout_mask = ~train_mask
 
-  train_split = files_df[train_mask].reset_index(drop=True)
-  holdout_split = files_df[holdout_mask].reset_index(drop=True)
+  train_split = paths_df[train_mask].reset_index(drop=True)
+  holdout_split = paths_df[holdout_mask].reset_index(drop=True)
   
   return train_split, holdout_split
 
 
-def get_clips(files_df, columns=None):
+def get_clips(paths_df, columns=None):
   """Applies get_clip to each column from columns
-  that is in files_df and returns a pd.Series of clip ids.
+  that is in paths_df and returns a pd.Series of clip ids.
   """
   if columns is None:
     columns = ["raw", "annotation"]
 
   clip_serieses = []
   for column in columns:
-    clip_series = files_df[column].apply(get_clip)
+    clip_series = paths_df[column].apply(get_clip)
     clip_serieses.append(clip_series) 
 
   clips = confirm_clips(clip_serieses)
