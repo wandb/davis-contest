@@ -1,7 +1,8 @@
 import numpy as np
 import pandas as pd
-import PIL
 import wandb
+
+from .utils import image
 
 
 def iou_from_output(prediction, annotate):
@@ -87,19 +88,16 @@ def run_evaluation(output_paths, annotation_paths, max_index=None):
 
     if pd.isna(output_path):
       continue
-  
-    model_outputs_im = PIL.Image.open(output_path)
-    target_im = PIL.Image.open(annotation_path)
-  
-    model_outputs = np.array(model_outputs_im)
-    target = np.array(target_im)
+
+    model_outputs = image.load_to_array(output_path)
+    target = image.load_to_array(target_path)
   
     iou_score = iou_from_output(model_outputs, target)
   
-    model_outputs_im = wandb.Image(model_outputs_im, "model output")
-    target_im = wandb.Image(target_im, "target")
+    model_outputs_im = wandb.Image(model_outputs, "model output")
+    target_im = wandb.Image(target, "target")
   
-    evaluation.append([model_outputs_im, target_im, float(iou_score)])
+    evaluation.append([model_outputs, target, float(iou_score)])
 
   metrics = extract_metrics(evaluation)
 
