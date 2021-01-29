@@ -9,6 +9,6 @@ def save_from_array(arr, folder, index):
   return str(path)
   
 def load_to_array(path):
-    im = PIL.Image.open(output_path)
+    im = PIL.Image.open(path)
     arr = np.array(im)
     return arr
