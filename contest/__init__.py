@@ -1,5 +1,12 @@
 from . import evaluate
 from . import utils
 
-from . import keras_utils as keras
-from . import torch_utils as torch
+try:
+  from . import keras_utils as keras
+except ImportError:
+  pass
+
+try:
+  from . import torch_utils as torch
+except ImportError:
+  pass
