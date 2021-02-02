@@ -1,3 +1,6 @@
+"""Tools for working with data for the DAVIS contest
+using the Keras library.
+"""
 import math
 
 import tensorflow.keras as keras
@@ -5,6 +8,11 @@ import numpy as np
 import skimage.io
 
 class VidSegDatasetSequence(keras.utils.Sequence):
+  """From a pd.Series of paths to image files and (optionally)
+  another pd.Series of segmentation annotation images for those images,
+  creates a simple subclass of torch.utils.data.Dataset suitable for use in
+  a Video Segmentation task.
+  """
 
   def __init__(self, image_paths, annotation_paths=None, batch_size=32):
     self.image_paths, self.annotation_paths = image_paths, annotation_paths
