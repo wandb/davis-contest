@@ -7,7 +7,7 @@ Your goal is to train a neural network model
 that can select the primary moving object from a video clip
 like the one below:
 
-![segmentation-example](https://i.imgur.com/sAPM7Yy.png)
+![segmentation-example](https://i.imgur.com/bwTl5Yl.gif)
 
 To mimic the constraints of designing for limited compute,
 like mobile devices,
