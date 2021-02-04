@@ -115,7 +115,7 @@ The package can be installed with
 [`pip`](https://pip.pypa.io/en/stable/),
 the standard package installer for Python:
 
-```bash
+```
 pip install "git+https://github.com/wandb/davis-contest.git#egg=contest"
 ```
 
@@ -126,7 +126,7 @@ provide the name of the `framework` at the end of the `pip install` command,
 using the
 [optional dependencies syntax](https://creatronix.de/pip-optional-dependencies/):
 
-```bash
+```
 pip install "git+https://github.com/wandb/davis-contest.git#egg=contest[framework]"
 ```
 
