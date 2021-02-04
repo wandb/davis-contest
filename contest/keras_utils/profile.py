@@ -8,6 +8,7 @@ from tensorflow.python.framework.convert_to_constants import (
 def count_params(model):
   return model.count_params()
 
+
 def count_flops(model, dummy_inputs, batch_size=None):
   """
   Calculate FLOPS for tf.keras.Model or tf.keras.Sequential .
