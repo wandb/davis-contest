@@ -1,4 +1,5 @@
 import os
+import warnings
 
 import numpy as np
 import pandas as pd
@@ -10,13 +11,13 @@ from .utils import image
 def iou_from_output(prediction, annotation):
   """Calculates the intersection over union (IoU) metric
   for two mask arrays with entries in 0-255.
-  
+
   Parameters:
     prediction: np.uint8 array
       Predicted mask for image as integer array, values from 0 to 255
     annotation: np.uint8 array
       Ground truth mask as integer array, values 0 and 255.
-    
+
   Returns:
     iou_score: float
       Ratio of the intersection of provided masks
@@ -93,12 +94,12 @@ def run_evaluation(output_paths, annotation_paths, max_index=None):
 
     model_outputs = image.load_to_array(output_path)
     annotation = image.load_to_array(annotation_path)
-  
+
     iou_score = iou_from_output(model_outputs, annotation)
-  
+
     model_outputs_im = wandb.Image(model_outputs, mode="L", caption="model output")
     annotation_im = wandb.Image(annotation, mode="L", caption="target")
-  
+
     evaluation.append([model_outputs_im, annotation_im, float(iou_score)])
 
   metrics = extract_metrics(evaluation)
@@ -112,8 +113,8 @@ def extract_metrics(evaluation):
 
   return {"segmentation_metric": mean_iou,
           "mean_iou": mean_iou}
-          
-          
+
+
 def name_submission(result_name, suffix=""):
   name = "".join(result_name.split(":")[:-1])
   name += "-submission"
@@ -121,7 +122,7 @@ def name_submission(result_name, suffix=""):
     name += "-" + "suffix"
   return name
 
-  
+
 def build_table(evaluation):
   evaluation_table = wandb.Table(columns=["out", "target", "iou_score"])
   for row in evaluation:
@@ -129,24 +130,35 @@ def build_table(evaluation):
   return evaluation_table
 
 
-def make_result_artifact(output_paths, name, output_dir="outputs", output_paths_path=None, metadata=None):
+def make_result_artifact(output_paths, name, output_dir="outputs",
+                         metadata=None, output_paths_path=None):
   """Given the pd.DataFrame output_paths, generated a wandb.Artifact with name name
   and adds the contents of the output_dir to that Artifact.
   The output_paths pd.DataFrame is saved to the Artifact with relative path "paths.json".
-  
+
   Metadata should include computational complexity information (e.g. FLOPs, parameter count).
   """
   if metadata is None:
     metadata = {}
-    
+
+  check_result_artifact_metadata(metadata)
+
   if output_paths_path is None:
     output_paths_path = os.path.join("wandb", "paths.json")
-    
+
   output_paths.to_json(output_paths_path)
-  
+
   result_artifact = wandb.Artifact(name=name, type="result",
                                    metadata=metadata)
   result_artifact.add_dir(output_dir, "outputs")
   result_artifact.add_file(output_paths_path, "paths.json")
-  
+
   return result_artifact
+
+
+def check_result_artifact_metadata(metadata):
+  required_keys = ["nlfops", "nparams"]
+  if not all(key in metadata.keys() for key in required_keys):
+    warnings.warn("Result artifact metadata does not contain all required keys:"
+                  f" {required_keys}.\n"
+                  "Submissions without this metadata may be rejected.")
