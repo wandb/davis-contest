@@ -50,7 +50,7 @@ See the Timeline section below.
 then build on it with your own custom data pipelines, training schemes, and model architectures.
 - Once you're happy with your trained model, produce your formatted results,
 as described in the **Formatting Your Results** section below.
-- Evaluate those results using the [evaluation notebook](http://wandb.me/davis-submit)
+- Evaluate those results using the [evaluation notebook](http://wandb.me/davis-submit).
 - Submit your evaluation run to [the public leaderboard](http://wandb.me/davis-leaderboard).
 
 Submissions are manually reviewed and will be approved within two business days.
