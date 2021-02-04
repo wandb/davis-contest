@@ -159,6 +159,6 @@ def make_result_artifact(output_paths, name, output_dir="outputs",
 def check_result_artifact_metadata(metadata):
   required_keys = ["nlfops", "nparams"]
   if not all(key in metadata.keys() for key in required_keys):
-    warnings.warn("Result artifact metadata does not contain all required keys:"
+    warnings.warn("\nResult artifact metadata does not contain all required keys:"
                   f" {required_keys}.\n"
                   "Submissions without this metadata may be rejected.")
