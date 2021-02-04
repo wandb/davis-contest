@@ -63,6 +63,7 @@ You can develop in Colab or locally (see **Installing the `contest` Package** be
 - Once you're happy with your trained model, produce your formatted results,
 as described in the **Formatting Your Results** section below.
 - Evaluate those results using the [evaluation notebook](http://wandb.me/davis-submit).
+See that notebook for details on how results will be scored.
 - Submit your evaluation run to [the public leaderboard](http://wandb.me/davis-leaderboard).
 
 Submissions are manually reviewed and will be approved within two business days.
