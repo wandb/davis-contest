@@ -21,6 +21,15 @@ included in this repository.
 
 See the Terms & Conditions for details.
 
+## Prizes
+
+The prizes will be online retail gift certificates.
+For winners inside the United States, this will be an Amazon gift card.
+
+- First prize - $1000 gift certificate
+- Second prize - $300 gift certificate
+- Third prize - $200 gift certificate
+
 ## How to Participate
 
 The contest is open to Qualcomm employees only.
@@ -46,8 +55,11 @@ See the Timeline section below.
 #### During the training phase
 
 - [Sign up](https://wandb.ai/login?signup=true) for W&B using your Qualcomm email. _Note_: The contest is open to Qualcomm employees only.
-- Check out the Colab notebook for your preferred framework ([PyTorch/Lightning](http://wandb.me/davis-starter-pt), [TensorFlow/Keras](davis-starter-keras)) for some starter code,
+- Check out the Colab notebook for your preferred framework
+([PyTorch/Lightning](http://wandb.me/davis-starter-pt),
+[TensorFlow/Keras](davis-starter-keras)) for some starter code,
 then build on it with your own custom data pipelines, training schemes, and model architectures.
+You can develop in Colab or locally (see **Installing the `contest` Package** below).
 - Once you're happy with your trained model, produce your formatted results,
 as described in the **Formatting Your Results** section below.
 - Evaluate those results using the [evaluation notebook](http://wandb.me/davis-submit).
@@ -78,6 +90,47 @@ and some articles on neural networks below under the Resources section below.
 Questions? Use the #qualcomm-competition
 [slack channel](http://wandb.me/slack),
 or email contest@wandb.com.
+
+## Installing the `contest` Package
+
+This section provides instructions
+for installing the `contest` package from
+the [GitHub repository](https://github.com/wandb/davis-contest)
+for this competition.
+
+There are three versions of the package:
+one that only installs the core tools,
+for formatting results and managing dataset paths,
+and two versions that provide extra tools
+for getting started in two popular deep learning frameworks.
+
+Check out the starter notebooks
+([PyTorch](http://wandb.me/davis-starter-pt),
+[Keras](http://wandb.me/davis-starter-keras))
+to see how the package is used.
+
+### Installing the core tools
+
+The package can be installed with
+[`pip`](https://pip.pypa.io/en/stable/),
+the standard package installer for Python:
+
+```bash
+pip install "git+https://github.com/wandb/davis-contest.git#egg=contest"
+```
+
+### Installing Keras and PyTorch/Lightning tools
+
+To install the `contest.keras` or `contest.torch` framework subpackages,
+provide the name of the `framework` at the end of the `pip install` command,
+using the
+[optional dependencies syntax](https://creatronix.de/pip-optional-dependencies/):
+
+```bash
+pip install "git+https://github.com/wandb/davis-contest.git#egg=contest[framework]"
+```
+
+where `framework` is one of `keras`, `torch`, or `keras,torch`.
 
 ## Formatting Your Results
 
@@ -124,15 +177,6 @@ with an integer index and a column called `"output"` with the
 method.
 See the code in the starter notebooks and repository for examples.
 
-## Prizes
-
-The prizes will be online retail gift certificates.
-For winners inside the United States, this will be an Amazon gift card.
-
-- First prize - $1000 gift certificate
-- Second prize - $300 gift certificate
-- Third prize - $200 gift certificate
-
 ## Timeline
 
 - Feburary 16 - Contest announced, training phase begins, public leaderboard opens
@@ -144,10 +188,10 @@ For winners inside the United States, this will be an Amazon gift card.
 ## Other Rules
 
 - You are free to use any framework you feel comfortable in, but you are responsible for accurately counting parameters and FLOPs.
-- You may only have one account per individual.
+- You may only submit results from one account.
+- You can submit as many runs as you like.
 - You can share small snippets of the code online or in our Slack community, but not the full solution.
 - You may similarly use snippets of code from online sources, but the majority of your code should be original. Originality of solution will be taken into account when scoring submissions. Submissions with insufficient novelty will be disqualified.
-- You can submit as many runs as you like.
 
 ## Click the Badges Below to Access the Colab Notebooks
 
