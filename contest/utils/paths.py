@@ -7,14 +7,16 @@ def artifact_paths(artifact, column=None):
   """From an artifact, get the paths of associated DAVIS files.
   As a side effect, downloads the Artifact to local file storage
   if it is not present.
+  
   Parameters:
     artifact: wandb.Artifact
     column: None or string
       If string, name of column of paths to fetch from Artifact's paths_df
       If None, return the entire dataframe of paths
+      
   Returns:
     paths: pd.DataFrame or pd.Series
-      Paths to files attached to Artifact
+      Paths to files attached to Artifact, sorted by index.
   """
   directory = artifact.download()
   paths = rebase_paths(get_paths(artifact, column), directory)
@@ -37,6 +39,8 @@ def get_paths(artifact, column=None):
   """Returns, as a pd.Series or pd.DataFrame,
   the information about paths to associated DAVIS files
   for the provided wandb.Artifact, optionally from a specific column.
+  
+  The returned pandas object is always sorted by index.
   """
   try:
     paths_filename = artifact.get_path("paths.json").download()
@@ -45,6 +49,8 @@ def get_paths(artifact, column=None):
                     "All dataset and result Artifacts need a paths.json file listing associated files.")
 
   paths_df = pd.read_json(paths_filename)
+  paths_df.sort_index(inplace=True)
+  
   if column is not None:
     try:
       paths_series = paths_df[column]
