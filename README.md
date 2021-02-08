@@ -181,7 +181,7 @@ See the code in the starter notebooks and repository for examples.
 ## Timeline
 
 - Feburary 16 - Contest announced, training phase begins, public leaderboard opens
-- March 29, 12:00pm Pacific - training phase ends, test phase begins: test set made available for inference, private leaderboard opens
+- March 29, 12:00am Pacific - training phase ends, test phase begins: test set made available for inference, private leaderboard opens
 - March 31, 11:59pm Pacific - test phase ends: private leaderboard closes to new submissions
 - May 1 - Winners announced
 - TBD - Retrospective webinar
