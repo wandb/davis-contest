@@ -27,8 +27,8 @@ The prizes will be online retail gift certificates.
 For winners inside the United States, this will be an Amazon gift card.
 
 - First prize - $1000 gift certificate
-- Second prize - $300 gift certificate
-- Third prize - $200 gift certificate
+- Second prize - $500 gift certificate
+- Third prize - $250 gift certificate
 
 ## How to Participate
 
