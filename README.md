@@ -21,7 +21,7 @@ like mobile devices,
 you're required to keep your network's parameter count
 below 50 million.
 Tools for profiling networks built in Keras and PyTorch are
-included in this repository.
+included in the contest repository.
 
 ## Prizes
 
