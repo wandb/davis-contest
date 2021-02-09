@@ -11,10 +11,12 @@ from .utils import image
 def iou_from_output(prediction, annotation):
   """Calculates the intersection over union (IoU) metric
   for two mask arrays with entries in 0-255.
+  Entries are divided by 255 and then rounded to 0 or 1
+  before the IoU is calculated. See binary_iou.
 
   Parameters:
     prediction: np.uint8 array
-      Predicted mask for image as integer array, values from 0 to 255
+      Predicted mask for image as integer array, values from 0 to 255.
     annotation: np.uint8 array
       Ground truth mask as integer array, values 0 and 255.
 
