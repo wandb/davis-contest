@@ -9,17 +9,13 @@ like the one below:
 
 <img src="https://github.com/wandb/davis-contest/blob/main/segment.gif?raw=true" width="300" />
 
-To mimic the constraints of designing for limited compute,
+To mimic the
+[constraints of designing for limited compute](https://arxiv.org/abs/1709.09503),
 like mobile devices,
-you're required to keep your network's parameters
-below *X million*
-and the number of FLOPs required to process a 480p clip
-with *Y frames*
-below *Z GFLOPs*.
+you're required to keep your network's parameter count
+below 25 million.
 Tools for profiling networks built in Keras and PyTorch are
 included in this repository.
-
-See the Terms & Conditions for details.
 
 ## Prizes
 
@@ -168,7 +164,7 @@ and submit the run for approval.
 A results artifact _must_ contain at least the following:
 - a file called `paths.json`, containing a key `"output"` whose value is a dictionary ("object" in JSON lingo) with keys that are integer strings and values that are strings defining paths to files,
 - at each path, a PNG file representing the model's outputs for the input frame from the dataset with the same integer index. This PNG file should be greyscale/luminance, with each byte representing an unsigned 8-bit integer (the `L` mode in [PIL](https://pillow.readthedocs.io/en/stable/handbook/image-file-formats.html)), and
-- in the [metadata](https://docs.wandb.ai/artifacts/api#2-create-an-artifact), the keys `nflops` and `nparams`, counting the number of FLOPs required to process a fixed-length 480p clip and the number of parameters in the model (including _all_ components).
+- in the [metadata](https://docs.wandb.ai/artifacts/api#2-create-an-artifact), the key `nparams`, counting the number of parameters in the model (including _all_ components).
 
 The `paths.json` file can be generated easily
 by saving a
@@ -176,19 +172,22 @@ by saving a
 with an integer index and a column called `"output"` with the
 [`.to_json`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_json.html#pandas.DataFrame.to_json)
 method.
-See the code in the starter notebooks and repository for examples.
+See the code in the starter notebooks and repository for examples,
+including for how to create the W&B Artifact.
 
 ## Timeline
 
 - Feburary 16 - Contest announced, training phase begins, public leaderboard opens
 - March 29, 12:00am Pacific - training phase ends, test phase begins: test set made available for inference, private leaderboard opens
 - March 31, 11:59pm Pacific - test phase ends: private leaderboard closes to new submissions
-- May 1 - Winners announced
-- TBD - Retrospective webinar
+- Mid-April - Winners announced
+- Early May - Retrospective webinar
 
 ## Other Rules
 
-- You are free to use any framework you feel comfortable in, but you are responsible for accurately counting parameters and FLOPs.
+See the Terms & Conditions for details.
+
+- You are free to use any framework you feel comfortable in, but you are responsible for accurately counting parameters.
 - You may only submit results from one account.
 - You can submit as many runs as you like.
 - You can share small snippets of the code online or in our Slack community, but not the full solution.
@@ -223,6 +222,8 @@ or join our [Slack community](http://wandb.me/slack)
 and post in the channel for this competition: `#qualcomm-competition`.
 
 ## Resources
-- [Weights & Biases docs](https://docs.wandb.com/library/python)
+- The [Weights & Biases docs](https://docs.wandb.com/library/python)
 - The [paper describing the training and validation set](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Perazzi_A_Benchmark_Dataset_CVPR_2016_paper.pdf)
 - [PapersWithCode benchmark for training and validation set](https://paperswithcode.com/sota/video-object-segmentation-on-davis-2016)
+- A [paper on designing ConvNets for mobile devices](https://arxiv.org/abs/1709.09503)
+- A [paper on 3DC-Seg, the current state-of-the-art method](https://arxiv.org/abs/2008.11516) for this task. NOTE: this method uses more than this contest's parameter budget. You can use it for inspiration, but you'll ned to look for ways to cut the parameter count.
