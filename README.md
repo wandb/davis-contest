@@ -4,16 +4,19 @@ Welcome to the
 Weights & Biases [video segmentation contest](http://wandb.me/davis-benchmark)!
 
 Your goal is to train a neural network model
-that can select the primary moving object from a video clip
+that can select the foreground object from a video clip
 like the one below:
 
 <img src="https://github.com/wandb/davis-contest/blob/main/segment.gif?raw=true" width="300" />
+
+This task is known as "primary object segmentation"
+or "video object segmentation" (VOS).
 
 To mimic the
 [constraints of designing for limited compute](https://arxiv.org/abs/1709.09503),
 like mobile devices,
 you're required to keep your network's parameter count
-below 25 million.
+below 50 million.
 Tools for profiling networks built in Keras and PyTorch are
 included in this repository.
 
