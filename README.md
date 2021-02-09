@@ -12,6 +12,9 @@ like the one below:
 This task is known as "primary object segmentation"
 or "video object segmentation" (VOS).
 
+The quality of segmentations will be assessed using
+the [Intersection over Union (IoU) metric](https://www.coursera.org/lecture/convolutional-neural-networks/intersection-over-union-p9gxz).
+
 To mimic the
 [constraints of designing for limited compute](https://arxiv.org/abs/1709.09503),
 like mobile devices,
@@ -177,6 +180,12 @@ with an integer index and a column called `"output"` with the
 method.
 See the code in the starter notebooks and repository for examples,
 including for how to create the W&B Artifact.
+
+The contents of the PNG files will be used to
+See [the evaluation code in the `contest` package](https://github.com/wandb/davis-contest/edit/main/contest/evaluate.py)
+for details on how results will be scored,
+in particular the functions
+`iou_from_output` and `binary_iou`.
 
 ## Timeline
 
