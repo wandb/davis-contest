@@ -23,7 +23,7 @@ below 50 million.
 Tools for profiling networks built in Keras and PyTorch are
 included in the contest repository.
 
-## Prizes
+# Prizes
 
 The prizes will be online retail gift certificates.
 For winners inside the United States, this will be an Amazon gift card.
@@ -32,7 +32,7 @@ For winners inside the United States, this will be an Amazon gift card.
 - Second prize - $500 gift certificate
 - Third prize - $250 gift certificate
 
-## How to Participate
+# How to Participate
 
 The contest is open to Qualcomm employees only.
 
@@ -82,7 +82,7 @@ so make sure to do so!
 just like in the training phase (see **Formatting Your Results** below).
 - Submit your results run to the private leaderboard (link information TBA).
 
-#### Getting help
+# Getting Help
 
 New to online contests with W&B, deep learning, or video segmentation?
 No problem!
@@ -94,7 +94,7 @@ Questions? Use the #qualcomm-competition
 [slack channel](http://wandb.me/slack),
 or email contest@wandb.com.
 
-## Installing the `contest` Package
+# Installing the `contest` Package
 
 This section provides instructions
 for installing the `contest` package from
@@ -135,7 +135,7 @@ pip install "git+https://github.com/wandb/davis-contest.git#egg=contest[framewor
 
 where `framework` is one of `keras`, `torch`, or `keras,torch`.
 
-## Formatting Your Results
+# Formatting Your Results
 
 > **See the starter notebooks
 ([PyTorch](http://wandb.me/davis-starter-pt),
@@ -187,7 +187,7 @@ for details on how results will be scored,
 in particular the functions
 `iou_from_output` and `binary_iou`.
 
-## Timeline
+# Timeline
 
 - Feburary 16 - Contest announced, training phase begins, public leaderboard opens
 - March 29, 12:00am Pacific - training phase ends, test phase begins: test set made available for inference, private leaderboard opens
@@ -195,9 +195,11 @@ in particular the functions
 - Mid-April - Winners announced
 - Early May - Retrospective webinar
 
-## Other Rules
+# Other Rules
 
-See the Terms & Conditions for details.
+See the
+[Terms & Conditions](http://wandb.me/davis-contest-terms)
+for details.
 
 - You are free to use any framework you feel comfortable in, but you are responsible for accurately counting parameters.
 - You may only submit results from one account.
@@ -205,6 +207,7 @@ See the Terms & Conditions for details.
 - You can share small snippets of the code online or in our Slack community, but not the full solution.
 - You may similarly use snippets of code from online sources, but the majority of your code should be original. Originality of solution will be taken into account when scoring submissions. Submissions with insufficient novelty will be disqualified.
 
+# Colab Notebooks
 ## Click the Badges Below to Access the Colab Notebooks
 
 These Google Colab notebooks describe how to get started with the contest and submit results.
@@ -228,12 +231,12 @@ Check that the "hardware accelerator" is set to GPU.
 - Add your own data engineering and model code.
 - Review the Getting Started section for details on how to submit results to the public leaderboard.
 
-## Questions
+# Ask Questions
 If you have any questions, please feel free to email us at contest@wandb.com
 or join our [Slack community](http://wandb.me/slack)
 and post in the channel for this competition: `#qualcomm-competition`.
 
-## Resources
+# Resources
 - The [Weights & Biases docs](https://docs.wandb.com/library/python)
 - The [paper describing the training and validation set](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Perazzi_A_Benchmark_Dataset_CVPR_2016_paper.pdf)
 - [PapersWithCode benchmark for training and validation set](https://paperswithcode.com/sota/video-object-segmentation-on-davis-2016)
