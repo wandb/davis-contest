@@ -1,3 +1,6 @@
+"""Tools for packaging and evaluating results,
+including making a result artifact and computing the IoU score.
+"""
 import os
 import warnings
 
