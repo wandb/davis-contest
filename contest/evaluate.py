@@ -138,7 +138,8 @@ def make_result_artifact(output_paths, name, output_dir="outputs",
   and adds the contents of the output_dir to that Artifact.
   The output_paths pd.DataFrame is saved to the Artifact with relative path "paths.json".
 
-  Metadata should include computational complexity information (e.g. FLOPs, parameter count).
+  For a submission to be valid, metadata must include the parameter count
+  at the key "nparams".
   """
   if metadata is None:
     metadata = {}
