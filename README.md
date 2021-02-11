@@ -240,5 +240,6 @@ and post in the channel for this competition: `#qualcomm-competition`.
 - The [Weights & Biases docs](https://docs.wandb.com/library/python)
 - The [paper describing the training and validation set](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Perazzi_A_Benchmark_Dataset_CVPR_2016_paper.pdf)
 - [PapersWithCode benchmark for training and validation set](https://paperswithcode.com/sota/video-object-segmentation-on-davis-2016)
+- A [paper on 3DC-Seg, the current best-performing method](https://arxiv.org/abs/2008.11516) for this task. NOTE: this method uses almost triple this contest's parameter budget. You can use the approach for inspiration, but you'll need to look for ways to cut the parameter count.
+- A [paper on MATNet, another state-of-the-art method](https://arxiv.org/abs/2003.04253) for this task. NOTE: as above, the parameter count is way above the limit -- 2x.
 - A [paper on designing ConvNets for mobile devices](https://arxiv.org/abs/1709.09503)
-- A [paper on 3DC-Seg, the current state-of-the-art method](https://arxiv.org/abs/2008.11516) for this task. NOTE: this method uses more than this contest's parameter budget. You can use it for inspiration, but you'll ned to look for ways to cut the parameter count.
