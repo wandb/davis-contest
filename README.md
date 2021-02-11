@@ -197,9 +197,10 @@ in particular the functions
 
 # Other Rules
 
-See the
-[Terms & Conditions](http://wandb.me/davis-contest-terms)
-for details.
+See
+[Contest Terms & Conditions](http://wandb.me/davis-contest-terms)
+for details,
+including eligibility requirements and locations.
 
 - You are free to use any framework you feel comfortable in, but you are responsible for accurately counting parameters.
 - You may only submit results from one account.
