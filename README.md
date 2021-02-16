@@ -59,7 +59,7 @@ See the Timeline section below.
 - [Sign up](https://wandb.ai/login?signup=true) for W&B using your Qualcomm email. _Note_: The contest is open to Qualcomm employees only.
 - Check out the Colab notebook for your preferred framework
 ([PyTorch/Lightning](http://wandb.me/davis-starter-pt),
-[TensorFlow/Keras](davis-starter-keras)) for some starter code,
+[TensorFlow/Keras](http://wandb.me/davis-starter-keras) for some starter code,
 then build on it with your own custom data pipelines, training schemes, and model architectures.
 You can develop in Colab or locally (see **Installing the `contest` Package** below).
 - Once you're happy with your trained model, produce your formatted results,
