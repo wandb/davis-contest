@@ -205,7 +205,7 @@ including eligibility requirements and locations.
 - You are free to use any framework you feel comfortable in, but you are responsible for accurately counting parameters.
 - You may only submit results from one account.
 - You can submit as many runs as you like.
-- You can share small snippets of the code online or in our Slack community, but not the full solution. You should keep your Weights & Biases project set to [private](https://wandb.ai/site/data).
+- You can share small snippets of the code online or in our Slack community, but not the full solution -- that means e.g. your GitHub repo should not be public You should keep your Weights & Biases project set to [private](https://wandb.ai/site/data).
 - You may similarly use snippets of code from online sources, but the majority of your code should be original. Originality of solution will be taken into account when scoring submissions. Submissions with insufficient novelty will be disqualified.
 
 # Colab Notebooks
