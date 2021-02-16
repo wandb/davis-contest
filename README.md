@@ -218,6 +218,7 @@ These Google Colab notebooks describe how to get started with the contest and su
 | Get Started in PyTorch  | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](http://wandb.me/davis-starter-pt) |
 | Get Started in Keras  | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](http://wandb.me/davis-starter-keras) |
 | Evaluate Your Results  | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](http://wandb.me/davis-submit) |
+| Using Pretrained Networks  | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](http://wandb.me/davis-pretrain) |
 
 ### Iterating quickly in Colab
 Google Colab is a convenient hosted environment
