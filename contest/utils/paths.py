@@ -62,12 +62,12 @@ def get_paths(artifact, column=None):
   
   if isinstance(paths, pd.Series):
         paths = paths.apply(convert_path_to_os)
-    else:
-        for column in ["raw", "output", "annotation"]:
-            try:
-                paths[column] = paths[column].apply(convert_path_to_os)
-            except KeyError:
-              pass
+  else:
+    for column in ["raw", "output", "annotation"]:
+      try:
+        paths[column] = paths[column].apply(convert_path_to_os)
+      except KeyError:
+        pass
       
   return paths
 
