@@ -17,7 +17,7 @@ def save_model_to_artifact(model, path, name, artifact_path="final_model"):
   model_artifact.add_file(path, artifact_path)
   wandb.run.log_artifact(model_artifact)
 
-  return os.path.join(wandb.run.entity, wandb.run.project, model_artifact.name)
+  return "/".join([wandb.run.entity, wandb.run.project, model_artifact.name])
 
 
 def load_model_from_artifact(name, model_class, model_path="final_model", model_args=None, model_kwargs=None):
