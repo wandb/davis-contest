@@ -12,6 +12,11 @@ def save_model_to_artifact(model_path, name, artifact_path="final_model"):
   model_artifact = wandb.Artifact(name=name, type="trained-model")
   model_artifact.add_file(model_path, artifact_path)
   wandb.run.log_artifact(model_artifact)
+  
+  try:
+    model_artifact.wait()
+  except AttributeError:
+    pass
 
   return "/".join([wandb.run.entity, wandb.run.project, model_artifact.name])
 
