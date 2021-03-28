@@ -1,3 +1,9 @@
+# TEST-SET SUBMISSION PERIOD OPENS SOON!
+
+Read more [here](https://wandb.me/davis-test-benchmark)
+and try out the evaluation code
+[here](https://wandb.me/davis-final-submit).
+
 # Densely-Annotated Video Segmentation Contest
 
 Welcome to the
